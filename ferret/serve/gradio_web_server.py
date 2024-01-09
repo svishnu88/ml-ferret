@@ -80,7 +80,7 @@ def generate_mask_for_feature(coor, raw_w, raw_h, mask=None):
 def draw_box(coor, region_mask, region_ph, img, input_mode):
     colors = ["red"]
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("./ferret/serve/dejavu/DejaVuSans.ttf", size=18)
+    font = ImageFont.truetype("/home/ml-ferret/ferret/serve/dejavu/DejaVuSans.ttf", size=18)
     if input_mode == 'Box':
         draw.rectangle([coor[0], coor[1], coor[2], coor[3]], outline=colors[0], width=4)
         draw.rectangle([coor[0], coor[3] - int(font.size * 1.2), coor[0] + int((len(region_ph) + 0.8) * font.size * 0.6), coor[3]], outline=colors[0], fill=colors[0], width=4)
@@ -256,7 +256,7 @@ def show_location(sketch_pad, chatbot):
 
     output_image = deepcopy(image)
     draw = ImageDraw.Draw(output_image)
-    font = ImageFont.truetype("./ferret/serve/dejavu/DejaVuSans.ttf", 28)
+    font = ImageFont.truetype("/home/ml-ferret/ferret/serve/dejavu/DejaVuSans.ttf", 28)
     for i in range(len(list_bboxes)):
         x1, y1, x2, y2 = list_old_bboxes[i]
         x1_new, y1_new, x2_new, y2_new = list_bboxes[i]
